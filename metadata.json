@@ -1,0 +1,7 @@
+{
+  "name": "Logistics",
+  "description": "Newspaper logistics, route distribution, delivery tracking, and monthly billing management app.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

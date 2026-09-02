@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_navy">#0D2B45</color>
+    <color name="primary_navy_dark">#0B2239</color>
+    <color name="primary_navy_light">#1D4468</color>
+    <color name="brand_navy">#0B2239</color>
+    
+    <color name="dashboard_purple">#5B37B7</color>
+    <color name="dashboard_purple_dark">#4A2D99</color>
+    
+    <color name="drawer_header_blue">#0D2B45</color>
+    <color name="drawer_header_blue_light">#1D4468</color>
+    <color name="drawer_selected_bg">#F1F5F9</color>
+    
+    <color name="accent_blue">#0284C7</color>
+    <color name="accent_blue_light">#E0F2FE</color>
+    <color name="accent_blue_border">#BAE6FD</color>
+    
+    <color name="app_bg">#F8FAFC</color>
+    <color name="bg_light">#F8FAFC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="card_bg">#FFFFFF</color>
+    
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_muted">#94A3B8</color>
+    
+    <color name="border_color">#E2E8F0</color>
+    <color name="input_bg">#FFFFFF</color>
+    <color name="input_border">#CBD5E1</color>
+    
+    <color name="badge_active_bg">#E0F2FE</color>
+    <color name="badge_active_text">#0369A1</color>
+    <color name="badge_inactive_bg">#F1F5F9</color>
+    <color name="badge_inactive_text">#64748B</color>
+    
+    <color name="status_paid_bg">#DCFCE7</color>
+    <color name="status_paid_text">#16A34A</color>
+    <color name="status_unpaid_bg">#FEE2E2</color>
+    <color name="status_unpaid_text">#DC2626</color>
+    
+    <color name="status_pending_bg">#FEE2E2</color>
+    <color name="status_pending_text">#DC2626</color>
+    
+    <color name="avatar_bg_1">#DBEAFE</color>
+    <color name="avatar_text_1">#1E40AF</color>
+    <color name="avatar_bg_2">#E0E7FF</color>
+    <color name="avatar_text_2">#3730A3</color>
+    <color name="avatar_bg_3">#EDE9FE</color>
+    <color name="avatar_text_3">#5B21B6</color>
+    <color name="avatar_navy">#0B2239</color>
+</resources>

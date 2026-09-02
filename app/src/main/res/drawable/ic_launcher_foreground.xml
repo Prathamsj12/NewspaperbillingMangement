@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:translateX="-10.8"
+        android:translateY="-10.8">
+        <!-- Newspaper Header -->
+        <path
+            android:fillColor="#56B4EB"
+            android:pathData="M32,32h44v10h-44z" />
+        <!-- Newspaper Body Frame -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M32,42h44v34c0,2.2 -1.8,4 -4,4h-36c-2.2,0 -4,-1.8 -4,-4v-34z" />
+        <!-- Top Jagged / Ticket style -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M32,34l4,-4l4,4l4,-4l4,4l4,-4l4,4l4,-4l4,4l4,-4l4,4l4,-4l4,4v8h-44z" />
+        <!-- Newspaper Headline Box -->
+        <path
+            android:fillColor="#0D2B45"
+            android:pathData="M38,46h14v10h-14z" />
+        <!-- Newspaper Text lines -->
+        <path
+            android:fillColor="#0D2B45"
+            android:pathData="M56,47h14v2h-14z" />
+        <path
+            android:fillColor="#0D2B45"
+            android:pathData="M56,52h14v2h-14z" />
+        <path
+            android:fillColor="#64748B"
+            android:pathData="M38,60h32v2h-32z" />
+        <path
+            android:fillColor="#64748B"
+            android:pathData="M38,65h32v2h-32z" />
+        <path
+            android:fillColor="#64748B"
+            android:pathData="M38,70h20v2h-20z" />
+    </group>
+</vector>
