@@ -285,6 +285,7 @@ public class AddCustomerActivity extends AppCompatActivity {
     }
 
     private void populateCustomerData() {
+//        receving the data  from the user side
         etCustomerName.setText(existingCustomer.getName());
         etCustomerPhone.setText(existingCustomer.getPhone());
         etCustomerAddress.setText(existingCustomer.getAddress());
@@ -423,6 +424,5 @@ public class AddCustomerActivity extends AppCompatActivity {
             Toast.makeText(this, "Customer saved successfully", Toast.LENGTH_SHORT).show();
         }
 
-        finish();
     }
 }

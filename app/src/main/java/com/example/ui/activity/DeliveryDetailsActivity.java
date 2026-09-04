@@ -1,5 +1,6 @@
 package com.example.ui.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -55,55 +56,14 @@ public class DeliveryDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_delivery_details);
 
         repository = AppRepository.getInstance();
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         Toolbar toolbar = findViewById(R.id.toolbarAddCustomer);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-        toolbar.setNavigationOnClickListener(v -> finish());
 
-        initViews();
-
-        EdgeToEdge.enable(this);
-
-        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
-
-
-        AppBarLayout appBarLayout = findViewById(R.id.appbardeliverdetails);
-
-// Status bar color
-        getWindow().setStatusBarColor(
-                getResources().getColor(R.color.primary_navy)
-        );
-
-// White status bar icons
-        WindowInsetsControllerCompat controller =
-                WindowCompat.getInsetsController(
-                        getWindow(),
-                        getWindow().getDecorView()
-                );
-
-        controller.setAppearanceLightStatusBars(false);
-
-// Handle status bar inset
-        ViewCompat.setOnApplyWindowInsetsListener(appBarLayout, (view, insets) -> {
-
-            Insets systemBars = insets.getInsets(
-                    WindowInsetsCompat.Type.statusBars()
-            );
-
-            view.setPadding(
-                    view.getPaddingLeft(),
-                    systemBars.top,
-                    view.getPaddingRight(),
-                    view.getPaddingBottom()
-            );
-
-            return insets;
-        });
-
-        ViewCompat.requestApplyInsets(appBarLayout);
 
         extractIntentData();
         initViews();
@@ -148,12 +108,50 @@ public class DeliveryDetailsActivity extends AppCompatActivity {
 
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbarDeliveryDetails);
-        setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
         toolbar.setNavigationOnClickListener(v -> finish());
+
+        initViews();
+
+        EdgeToEdge.enable(this);
+
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
+
+        AppBarLayout appBarLayout = findViewById(R.id.appbardeliverdetails);
+
+// Status bar color
+        getWindow().setStatusBarColor(
+                getResources().getColor(R.color.primary_navy)
+        );
+
+// White status bar icons
+        WindowInsetsControllerCompat controller =
+                WindowCompat.getInsetsController(
+                        getWindow(),
+                        getWindow().getDecorView()
+                );
+
+        controller.setAppearanceLightStatusBars(false);
+
+// Handle status bar inset
+        ViewCompat.setOnApplyWindowInsetsListener(appBarLayout, (view, insets) -> {
+
+            Insets systemBars = insets.getInsets(
+                    WindowInsetsCompat.Type.statusBars()
+            );
+
+            view.setPadding(
+                    view.getPaddingLeft(),
+                    systemBars.top,
+                    view.getPaddingRight(),
+                    view.getPaddingBottom()
+            );
+
+            return insets;
+        });
+
+        ViewCompat.requestApplyInsets(appBarLayout);
+
     }
 
     private void setupClickListeners() {

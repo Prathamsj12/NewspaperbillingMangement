@@ -100,6 +100,7 @@
                         android:inputType="phone"
                         android:paddingStart="12dp"
                         android:paddingEnd="12dp"
+                        android:maxLength="10"
                         android:textColor="@color/text_primary"
                         android:textColorHint="@color/text_muted"
                         android:textSize="14sp" />

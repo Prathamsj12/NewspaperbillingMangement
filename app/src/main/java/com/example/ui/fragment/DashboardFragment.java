@@ -18,7 +18,7 @@ import com.example.ui.activity.MainActivity;
 import com.example.viewmodel.MainViewModel;
 
 public class DashboardFragment extends Fragment {
-
+//Access : Owner
     private MainViewModel viewModel;
     private TextView tvTotalCustomers, tvActiveCustomers, tvTotalAreas, tvPendingPayments, tvTotalStaff;
     private TextView tvTodayCollection, tvMonthlyCollection;

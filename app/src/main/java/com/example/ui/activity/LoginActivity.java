@@ -27,22 +27,78 @@ public class LoginActivity extends AppCompatActivity {
         TextView tvRegister = findViewById(R.id.tvRegister);
 
         btnLogin.setOnClickListener(v -> {
+
             String email = etEmail.getText().toString().trim();
             String password = etPassword.getText().toString().trim();
 
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show();
+                Toast.makeText(
+                        this,
+                        "Please enter email and password",
+                        Toast.LENGTH_SHORT
+                ).show();
                 return;
             }
 
-            // Standard check: accept "admin" / "admin" or valid format
-            if (email.equalsIgnoreCase("admin") || email.equalsIgnoreCase("admin@srsnews.com") || !email.isEmpty()) {
-                Toast.makeText(this, "Welcome to SRS Newspaper App", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            // OWNER LOGIN
+//            if (email.equalsIgnoreCase("admin")
+//                    && password.equals("admin")) {
+//
+//                Toast.makeText(
+//                        this,
+//                        "Welcome Owner",
+//                        Toast.LENGTH_SHORT
+//                ).show();
+//
+//                Intent intent = new Intent(
+//                        LoginActivity.this,
+//                        MainActivity.class
+//                );
+//
+//                // Send user role
+//                intent.putExtra("USER_ROLE", "OWNER");
+//
+//                startActivity(intent);
+//                finish();
+//
+//            }
+            else if (email.equalsIgnoreCase("admin")
+                    && password.equals("admin")) {
+
+                Intent intent = new Intent(
+                        LoginActivity.this,
+                        MainActivity.class
+                );
+
+                intent.putExtra("USER_ROLE", "OWNER");
+
                 startActivity(intent);
                 finish();
-            } else {
-                Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show();
+            }
+
+            // DELIVERY PERSON LOGIN
+            else if (email.equalsIgnoreCase("delivery")
+                    && password.equals("delivery")) {
+
+                Intent intent = new Intent(
+                        LoginActivity.this,
+                        MainActivity.class
+                );
+
+                intent.putExtra("USER_ROLE", "DELIVERY_PERSON");
+
+                startActivity(intent);
+                finish();
+            }
+
+            // INVALID LOGIN
+            else {
+
+                Toast.makeText(
+                        this,
+                        "Invalid email or password",
+                        Toast.LENGTH_SHORT
+                ).show();
             }
         });
 
@@ -51,5 +107,9 @@ public class LoginActivity extends AppCompatActivity {
 
         tvRegister.setOnClickListener(v ->
                 Toast.makeText(this, "Please contact administrator for staff registration", Toast.LENGTH_LONG).show());
+//        Intent intent = new Intent(LoginActivity.this, RegistartionActivity.class);
+//        startActivity(intent);
+//        finish();
+
     }
 }

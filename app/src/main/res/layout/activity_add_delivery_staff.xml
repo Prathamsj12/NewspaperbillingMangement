@@ -39,6 +39,7 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+
             <!-- SECTION 1: Basic & Personal Details -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -103,7 +104,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
-                        android:text="Middle Name"
+                        android:text="Middle Name(Optional)"
                         android:textColor="@color/text_secondary"
                         android:textSize="13sp" />
 

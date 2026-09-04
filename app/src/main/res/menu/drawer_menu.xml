@@ -28,7 +28,7 @@
         <item
             android:id="@+id/nav_daily_delivery"
             android:icon="@drawable/ic_delivery"
-            android:visible="false"
+            android:visible="true"
             android:title="Daily Route Delivery" />
         <item
             android:id="@+id/nav_monthly_billing"
@@ -38,7 +38,6 @@
     </group>
 
     <item android:title="Account"
-
         >
         <menu>
             <item

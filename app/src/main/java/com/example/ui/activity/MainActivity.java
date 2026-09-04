@@ -3,6 +3,7 @@ package com.example.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private NavigationView navigationView;
     private TextView tvToolbarTitle;
     private MainViewModel viewModel;
+    private String userRole;
 //Newspaper point of  view(DeliveryPerson ,Owner,Customer (UI Logic should be Based)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView = findViewById(R.id.navigationView);
         tvToolbarTitle = findViewById(R.id.tvToolbarTitle);
 
+        userRole = getIntent().getStringExtra("USER_ROLE");
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar,
                 R.string.app_name, R.string.app_name
@@ -88,9 +91,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_dashboard) {
             navigateToFragment(new DashboardFragment(), "Dashboard", id);
-        } else if (id == R.id.nav_routes) {
-            navigateToFragment(new RouteListFragment(), "Route Management", id);
-        } else if (id == R.id.nav_customers) {
+        }else if (id == R.id.nav_routes) {
+
+            if ("DELIVERY_PERSON".equalsIgnoreCase(userRole)) {
+
+                Toast.makeText(
+                        this,
+                        "Route Management is not available for Delivery Person",
+                        Toast.LENGTH_SHORT
+                ).show();
+
+                return true;
+            }
+
+            navigateToFragment(
+                    new RouteListFragment(),
+                    "Route Management",
+                    id
+            );
+        }else if (id == R.id.nav_customers) {
             navigateToFragment(new CustomerListFragment(), "Customer Management", id);
         } else if (id == R.id.nav_areas) {
             navigateToFragment(new AreaListFragment(), "Area Management", id);
@@ -158,6 +177,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 
     public void openAddCustomer() {
         Intent intent = new Intent(this, AddCustomerActivity.class);

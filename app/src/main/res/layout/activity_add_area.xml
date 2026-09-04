@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_light">
 
+    <!-- App Bar -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbararea"
         android:layout_width="match_parent"
@@ -19,8 +22,11 @@
             app:navigationIcon="@drawable/ic_back"
             app:title="Add / Edit Area"
             app:titleTextColor="@color/white" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
+
+    <!-- Main Content -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -41,6 +47,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
+            <!-- Area Code -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -62,6 +69,7 @@
                 android:textColor="@color/text_primary"
                 android:textSize="14sp" />
 
+            <!-- Area Name -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -83,6 +91,7 @@
                 android:textColor="@color/text_primary"
                 android:textSize="14sp" />
 
+            <!-- Zone -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -104,6 +113,7 @@
                 android:textColor="@color/text_primary"
                 android:textSize="14sp" />
 
+            <!-- City and Pincode -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -136,6 +146,7 @@
                         android:paddingEnd="12dp"
                         android:textColor="@color/text_primary"
                         android:textSize="14sp" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -164,9 +175,12 @@
                         android:paddingEnd="12dp"
                         android:textColor="@color/text_primary"
                         android:textSize="14sp" />
+
                 </LinearLayout>
+
             </LinearLayout>
 
+            <!-- Landmark -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -188,6 +202,7 @@
                 android:textColor="@color/text_primary"
                 android:textSize="14sp" />
 
+            <!-- Save Button -->
             <Button
                 android:id="@+id/btnSaveArea"
                 android:layout_width="match_parent"
@@ -202,6 +217,48 @@
                 android:textStyle="bold" />
 
         </LinearLayout>
+
     </androidx.core.widget.NestedScrollView>
+
+    <!-- Loading Overlay -->
+    <FrameLayout
+        android:id="@+id/loadingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <!-- Center Loading Container -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:indeterminate="true" />
+
+            <!-- Loading Message -->
+            <TextView
+                android:id="@+id/tvLoadingMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Please wait..."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </FrameLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
